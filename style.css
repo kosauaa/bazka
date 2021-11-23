@@ -320,7 +320,7 @@ header.cennik {
 
 header.uslugi,
 header.produkty {
-  margin-left: 25vw;
+  text-align: center;
   color: var(--specialColor);
 }
 
@@ -338,19 +338,28 @@ ul.cennik li {
   flex-direction: row;
   margin: 10px 0;
   font-size: 1.1em;
+  justify-content: space-between;
 }
 
 ul.cennik li .price-title {
   text-transform: uppercase;
-  width: 50%
+  
+  display:flex;
+
 }
 
 
 ul.cennik li .price-price {
   text-transform: uppercase;
-  width: 50%;
-  text-align: center;
+  padding-left: 10px;
+  text-align: right;
+  display:flex;
 
+}
+
+ul.cennik li:first-of-type{
+  justify-content: center;
+  align-content: center;
 }
 
 section.produkty {
@@ -382,6 +391,7 @@ header.kontakt {
 
 header.cennik {
   align-self: center;
+  
 }
 
 
@@ -787,7 +797,7 @@ textarea:hover {
   width: 502px;
 
   padding: 0;
-  margin: -5px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
 
   /* font-family: 'Lato', sans-serif; */
   font-size: 0.875em;
@@ -838,4 +848,123 @@ header.logowanie {
 
 input#password:hover {
   background-color: #EA1B1B;
+}
+
+@media (max-width: 800px){
+/* nav */
+
+nav {
+  z-index: 2;
+  opacity: 1;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0px 5px 0px #dedede;
+  font-size: 1em;
+  flex-direction: column;
+  display: flex;
+  height: 400px;
+  
+
+}
+
+nav a.logo {
+  /* width: 20vw; */
+  /* margin-left: 7%; */
+  /* position: relative; */
+  display: flex;
+  height: 180px;
+  
+  /* min-width: 100px; */
+}
+
+nav a.logo img {
+  margin: 0 auto;
+
+}
+
+nav ul {
+  list-style: none;
+  margin-top:8px;
+  width: 100%;
+  /* text-align: center; */
+  flex-direction: column;
+  /* flex-basis: auto; */
+  display: flex;
+  /* align-items: center;
+  justify-content: center; */
+}
+
+nav ul li {
+  display: inline-block;
+  /* padding: 0 15px; */
+  margin: 0 10px;
+  width: 100%;
+  text-align: center;
+  align-self: center;
+}
+
+nav ul li a {
+  display: flex;
+  padding: 15px 0;
+  text-decoration: none;
+  /* color: rgb(102, 102, 102); */
+  color: var(--secondColor);
+  font-weight: 500;
+  text-transform: uppercase;
+  /* margin: 0 25px; */
+  justify-content: center;
+  width: 100%;
+  font-size: 1.2em;
+
+}
+
+
+
+
+
+
+
+
+nav.blend ul li a {
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+
+nav.blend ul li a:before,
+nav.blend ul li a:after {
+  position: absolute;
+  width: 0px;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  background: var(--secondColor);
+  transition: all .5s;
+  margin: auto;
+  content: '.';
+  color: transparent;
+  z-index: -1;
+  opacity: .75;
+}
+
+nav.blend ul li a:before {
+  left: 0;
+}
+
+nav.blend ul li a:after {
+  right: 0;
+}
+
+nav.blend ul li a:hover:after,
+nav.blend ul li a:hover:before {
+  width: 100%;
+}
+
 }
